@@ -7,7 +7,11 @@ class App extends Component {
       latitude: null,
       message: "",
     };
+    console.log("constructor")
+  }
 
+  componentDidMount() {
+    console.log("componentdidmount")
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude } = position.coords;
@@ -21,6 +25,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("render")
     const { message, latitude } = this.state;
     if (message && !latitude) {
       return <div>{message}</div>;
