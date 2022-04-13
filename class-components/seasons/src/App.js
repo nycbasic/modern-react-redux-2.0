@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 class App extends Component {
   state = {
@@ -20,11 +21,15 @@ class App extends Component {
     );
   }
 
-  render() {
+  renderContent() {
     const { message, latitude } = this.state;
-    if (message && !latitude) return <div>{message}</div>;
-    if (!message && latitude) return <SeasonDisplay lat={latitude}/>;
-    return <div>Loading...</div>;
+    if (message && !latitude) return <Spinner message={message} />;
+    if (!message && latitude) return <SeasonDisplay lat={latitude} />;
+    return <Spinner message="Please accept location request!" />;
+  }
+
+  render() {
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
