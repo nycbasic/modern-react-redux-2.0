@@ -28,7 +28,6 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-
     search();
   }, [debouncedTerm]);
 
