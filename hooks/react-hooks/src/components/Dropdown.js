@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const Dropdown = (props) => {
-  const { options, selected, onSelectedChange } = props;
+  const {label, options, selected, onSelectedChange } = props;
   const [open, setOpen] = useState(false);
   const ref = useRef();
   useEffect(() => {
@@ -11,6 +11,7 @@ const Dropdown = (props) => {
       }
       setOpen(false);
     };
+
     document.body.addEventListener("click", onBodyClick, { capture: true });
 
     return () => {
@@ -42,7 +43,7 @@ const Dropdown = (props) => {
     <div ref={ref} className="ui form">
       <div className="field">
         <label htmlFor="" className="label">
-          Select a Color
+          {label}
         </label>
         <div
           className={`ui selection dropdown ${open && "visible active"}`}
