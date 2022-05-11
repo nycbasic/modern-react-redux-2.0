@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-const Accordian = ({ items }) => {
+const items = [
+  {
+    title: "test1",
+    content: "Hello World!",
+  },
+];
+
+const Accordian = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (

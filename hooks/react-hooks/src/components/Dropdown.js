@@ -36,8 +36,6 @@ const Dropdown = (props) => {
     );
   });
 
-  console.log(ref)
-
 
   return (
     <div ref={ref} className="ui form">
