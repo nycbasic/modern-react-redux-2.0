@@ -3,7 +3,7 @@ import Translate from "./Translate/Translate";
 import Accordion from "./Accordion";
 import Dropdown from "./Dropdown";
 import Search from "./Search";
-import Route from "./Route";
+import Route from "./Navigation/Route";
 import Header from "./Header";
 
 const options = [
