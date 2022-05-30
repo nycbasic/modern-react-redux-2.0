@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { selectSong } from "../actions";
 
-const SongList = () => {
+const SongList = (props) => {
   const renderList = () => {
-    const { songs, selectSong } = this.props;
+    const { songs, selectSong } = props;
     return songs.map((song, i) => {
       return (
         <div key={i} className="item">
